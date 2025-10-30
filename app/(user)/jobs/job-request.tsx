@@ -27,7 +27,7 @@ const JobRequest = () => {
       <ScreenHeader
         onPressBack={() => router.back()}
         className="px-5 pb-4 pt-2.5 rounded-b-3xl bg-[#E5F4FD] overflow-hidden"
-        title="Buy Nameplate"
+        title="Job Request"
         titleClass="text-primary dark:text-dark-primary"
         iconColor={isDark ? "#fff" : "#111111"}
         components={
