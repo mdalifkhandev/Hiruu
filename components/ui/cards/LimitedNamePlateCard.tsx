@@ -1,10 +1,10 @@
-import { NamePlateCardProps } from "@/types/components/input";
-import { MaterialIcons, Octicons, SimpleLineIcons } from "@expo/vector-icons";
+import { LimitedNamePlateCardProps } from "@/types/components/input";
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Text, View } from "react-native";
 
-const NamePlateCard = ({ variant, className }: NamePlateCardProps) => {
+const LimitedNamePlateCard = ({ variant }: LimitedNamePlateCardProps) => {
   const getGradientColors = () => {
     switch (variant) {
       case "variant1":
@@ -70,7 +70,43 @@ const NamePlateCard = ({ variant, className }: NamePlateCardProps) => {
         borderColor: getColors(),
       }}
     >
-      <View className={`${className} overflow-hidden rounded-xl`}>
+      <View className="overflow-hidden rounded-xl">
+        {/* timer */}
+        <View className="absolute top-0 inset-x-0 items-center z-30">
+          <Image
+            className="absolute top-0 inset-x-0 items-center"
+            source={require("@/assets/images/timer-bg.svg")}
+            style={{
+              width: 227,
+              height: 34,
+            }}
+            contentFit="contain"
+          />
+
+          <View className="absolute top-0 inset-x-0 items-center">
+            <View className="flex-row items-center gap-1.5 py-2">
+              <Text className="text-sm font-proximanova-regular">
+                Available for
+              </Text>
+
+              <View className="flex-row items-center">
+                <MaterialCommunityIcons
+                  name="timer-sand"
+                  size={16}
+                  color={getColors()}
+                />
+
+                <Text
+                  className="font-proximanova-bold text-[#4FB2F3]"
+                  style={{ color: getColors() }}
+                >
+                  1d, 10h
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+
         {/* backgrounds */}
         {variant === "variant1" ? (
           <>
@@ -222,81 +258,54 @@ const NamePlateCard = ({ variant, className }: NamePlateCardProps) => {
           start={variant === "variant1" ? { x: 0, y: 0 } : { x: 1, y: 1 }}
           end={variant === "variant1" ? { x: 1, y: 1 } : { x: 0, y: 0 }}
         >
-          <View className={`p-3.5 flex-row items-center gap-2 rounded-2xl`}>
+          <View
+            className={`px-4 pb-4 pt-11 flex-row items-center gap-2 rounded-2xl`}
+          >
             {/* profile image */}
-            <View
-              className={`border-2 p-0.5 rounded-full`}
+            <Image
+              source={require("@/assets/images/reward/user.svg")}
               style={{
-                borderWidth: 1,
-                borderColor: getColors(),
+                width: 50,
+                height: 50,
+                borderRadius: 999,
               }}
-            >
-              <Image
-                source="https://i0.wp.com/www.splento.com/blog/wp-content/uploads/2024/10/confident-young-african-american-business-woman-in-2024-04-26-18-20-12-utc-scaled.jpg?ssl=1"
-                style={{
-                  width: 75,
-                  height: 75,
-                  borderRadius: 999,
-                }}
-                contentFit="cover"
-              />
-            </View>
+              contentFit="cover"
+            />
 
             {/* name, location, rating */}
-            <View className="items-start">
-              <View className="flex-row gap-1.5 items-center mb-1.5">
-                <Text className="font-proximanova-semibold text-sm text-primary">
-                  Mohammad Anik
-                </Text>
-                <MaterialIcons name="verified" size={18} color="#4F83F3" />
-              </View>
+            <View className="flex-row items-center justify-center gap-6">
+              {/* skeleton */}
+              <View
+                className="h-3.5 w-36 rounded-[30px]"
+                style={{
+                  backgroundColor: getColors(),
+                }}
+              />
 
-              <View className="flex-row items-center gap-1 mb-1.5">
-                <SimpleLineIcons name="location-pin" size={14} color="black" />
-                <Text className="font-proximanova-regular text-xs text-primary">
-                  New york, North Bergen
-                </Text>
-              </View>
+              <View className="flex-row gap-1.5 items-center">
+                <MaterialIcons
+                  className="bg-white/40 p-1.5 rounded-full"
+                  name="lock"
+                  size={14}
+                  color="black"
+                />
 
-              <View className="flex-row items-center justify-between gap-7">
-                {/* rating */}
-                <View className="flex-row items-center gap-1 p-2 bg-white/40 rounded-md">
-                  <Octicons name="star-fill" size={14} color="#F1C400" />
-                  <Octicons name="star-fill" size={14} color="#F1C400" />
-                  <Octicons name="star-fill" size={14} color="#F1C400" />
-                  <Octicons name="star-fill" size={14} color="#F1C400" />
-                  <Text className="font-proximanova-semibold text-xs">
-                    4.8/5
-                  </Text>
-                </View>
-
-                {/* coin */}
-                {variant === "variant1" && (
-                  <View className="flex-row gap-1.5 items-center">
-                    <MaterialIcons
-                      className="bg-white/40 p-1.5 rounded-full"
-                      name="lock"
-                      size={18}
-                      color="black"
-                    />
-
-                    <View className="flex-row items-center">
-                      <Image
-                        source={require("@/assets/images/hiruu-coin.svg")}
-                        style={{
-                          width: 24,
-                          height: 24,
-                        }}
-                        contentFit="contain"
-                      />
-                      <View className="px-5 py-1 bg-[#DDF1FF] -ml-4 -z-10 rounded-r-[40px]">
-                        <Text className="text-xs font-proximanova-semibold">
-                          05
-                        </Text>
-                      </View>
-                    </View>
+                <View className="flex-row items-center">
+                  <Image
+                    source={require("@/assets/images/hiruu-coin.svg")}
+                    style={{
+                      width: 24,
+                      height: 24,
+                      zIndex: 20,
+                    }}
+                    contentFit="contain"
+                  />
+                  <View className="px-5 py-1 bg-white -ml-4 z-10 rounded-r-[40px]">
+                    <Text className="text-xs font-proximanova-semibold">
+                      05
+                    </Text>
                   </View>
-                )}
+                </View>
               </View>
             </View>
           </View>
@@ -306,4 +315,4 @@ const NamePlateCard = ({ variant, className }: NamePlateCardProps) => {
   );
 };
 
-export default NamePlateCard;
+export default LimitedNamePlateCard;
