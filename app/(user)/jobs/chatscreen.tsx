@@ -2,25 +2,12 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
   StatusBar,
-  Image,
   FlatList,
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  AntDesign,
-  Ionicons,
-  MaterialCommunityIcons,
-  MaterialIcons,
-  Entypo,
-  FontAwesome,
-  Feather,
-} from "@expo/vector-icons";
 import ChatScreenHeader from "@/components/header/ChatScreenHeader";
 import JobCard from "@/components/ui/cards/JobCard";
 import NoMessages from "@/components/ui/cards/NoMessages";
