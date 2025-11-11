@@ -4,6 +4,7 @@ import ExperienceCard from "@/components/ui/cards/ExperienceCard";
 import NamePlateCard from "@/components/ui/cards/NamePlateCard";
 import StatCardPrimary from "@/components/ui/cards/StatCardPrimary";
 import Dropdown from "@/components/ui/dropdown/DropDown";
+import ConnectSocials from "@/components/ui/inputs/ConnectSocials";
 import {
   Feather,
   Foundation,
@@ -237,6 +238,7 @@ const profile = () => {
           </Text>
           <ToggleButton isOn={isOn} setIsOn={setIsOn} title="Keep colors" />
         </View>
+
         <View className="mx-5 mt-4">
           <Dropdown
             // label="Select Style"
@@ -288,82 +290,7 @@ const profile = () => {
           </Text>
         </View>
 
-        <View className="border border-[#EEEEEE] rounded-xl m-5">
-          <View className="flex-row justify-between items-center p-2.5 border-b border-[#EEEEEE]">
-            <View className="flex-row items-center gap-2.5">
-              <View>
-                <Image
-                  source={require("@/assets/images/facebook2.svg")}
-                  contentFit="contain"
-                  style={{ height: 40, width: 40 }}
-                />
-              </View>
-              <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-                Facebook
-              </Text>
-            </View>
-            <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-              @alvber_f
-            </Text>
-          </View>
-
-          <View className="flex-row justify-between items-center  p-2.5  border-b border-[#EEEEEE]">
-            <View className="flex-row items-center gap-2.5">
-              <View>
-                <Image
-                  source={require("@/assets/images/linkedin.svg")}
-                  contentFit="contain"
-                  style={{ height: 40, width: 40 }}
-                />
-              </View>
-              <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-                Linkdin
-              </Text>
-            </View>
-            <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-              {" "}
-              in/albert-flore-12562f25{" "}
-            </Text>
-          </View>
-
-          <View className="flex-row justify-between items-center  p-2.5 border-b border-[#EEEEEE] ">
-            <View className="flex-row items-center gap-2.5">
-              <View>
-                <Image
-                  source={require("@/assets/images/whatsapp.svg")}
-                  contentFit="contain"
-                  style={{ height: 40, width: 40 }}
-                />
-              </View>
-              <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-                Whats App
-              </Text>
-            </View>
-            <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-              {" "}
-              +1(125) 256 25612{" "}
-            </Text>
-          </View>
-
-          <View className="flex-row justify-between items-center p-2.5">
-            <View className="flex-row items-center gap-2.5">
-              <View>
-                <Image
-                  source={require("@/assets/images/twitter.svg")}
-                  contentFit="contain"
-                  style={{ height: 40, width: 40 }}
-                />
-              </View>
-              <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-                Twitter
-              </Text>
-            </View>
-            <Text className="font-proximanova-semibold text-sm text-primary dark:text-dark-primary">
-              {" "}
-              @alber256{" "}
-            </Text>
-          </View>
-        </View>
+        <ConnectSocials />
       </ScrollView>
     </View>
   );
