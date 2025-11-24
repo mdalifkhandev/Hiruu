@@ -27,6 +27,9 @@ const LimitedNamePlateCard = ({ variant }: LimitedNamePlateCardProps) => {
         return ["#EFF8FF", "#C3DDFF"];
       case "variant10":
         return ["#F4FBFF", "#C7CBE0"];
+      case "variant11":
+        return ["#FFF7F4", "#F6CEBC"];
+
       default:
         return ["#fff3fd", "#FE383861"];
     }
@@ -54,6 +57,9 @@ const LimitedNamePlateCard = ({ variant }: LimitedNamePlateCardProps) => {
         return "#8294AC";
       case "variant10":
         return "#8F7467";
+      case "variant11":
+        return "#CEA694";
+
       default:
         return "#E74C69";
     }
@@ -246,6 +252,18 @@ const LimitedNamePlateCard = ({ variant }: LimitedNamePlateCardProps) => {
               style={{
                 width: 91,
                 height: 114,
+              }}
+              contentFit="contain"
+            />
+          </View>
+        )}
+        {variant === "variant11" && (
+          <View className="absolute bottom-0 -right-5 z-10">
+            <Image
+              source={require("@/assets/images/nameplates/forklift.svg")}
+              style={{
+                width: 82,
+                height: 82,
               }}
               contentFit="contain"
             />
