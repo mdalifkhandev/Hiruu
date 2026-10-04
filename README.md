@@ -82,8 +82,8 @@ A modern job marketplace and workforce management platform built with React Nati
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/xyryc/Hiruu-App.git
-cd Hiruu-App
+git clone https://github.com/mdalifkhandev/Hiruu.git
+cd Hiruu
 ```
 
 ### 2. Install Dependencies
@@ -224,8 +224,8 @@ cd android && ./gradlew clean
 
 ## Developer
 
-**Md Talath Un Nabi** — Lead App Developer — [GitHub](https://github.com/xyryc)
+**Md. Shihab Ebne Alif Khan** — Lead App Developer — [GitHub](https://github.com/mdalifkhandev)
 
 ## Support
 
-For support, email `mdtalathunnabi@gmail.com`
+For support, email `mdalifkhandev@gmail.com`

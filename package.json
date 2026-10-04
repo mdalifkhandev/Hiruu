@@ -3,7 +3,7 @@
   "main": "index.js",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
+    "start": "node api.js && expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "podfix": "node scripts/podfix.js",
     "ios:podfile:fix": "npm run podfix",
